@@ -1,3 +1,11 @@
+/**
+ * File Name: authRoutes.js
+ * Student's Name: Tuan Nguyen
+ * StudentID: 200541876
+ * Date: 11/15/2024
+ * Description: Routes for user authentication, including registration, login, and logout.
+ */
+
 const express = require('express');
 const { registerUser, loginUser, logoutUser } = require('../controllers/authController');
 

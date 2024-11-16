@@ -1,6 +1,16 @@
+/**
+ * File Name: recipeController.js
+ * Student's Name: Tuan Nguyen
+ * StudentID: 200541876
+ * Date: 11/15/2024
+ * Description: Handles CRUD operations for recipes.
+ */
+
 const Recipe = require('../models/Recipe');
 
-// Get all recipes (publicly accessible)
+/**
+ * Fetches all recipes (publicly accessible).
+ */
 exports.getAllRecipesPublic = async (req, res) => {
     try {
         const recipes = await Recipe.find();
@@ -10,7 +20,9 @@ exports.getAllRecipesPublic = async (req, res) => {
     }
 };
 
-// Get all recipes
+/**
+ * Fetches all recipes (protected route).
+ */
 exports.getAllRecipes = async (req, res) => {
     try {
         const recipes = await Recipe.find();
@@ -20,7 +32,9 @@ exports.getAllRecipes = async (req, res) => {
     }
 };
 
-// Get a single recipe by ID
+/**
+ * Fetches a single recipe by its ID.
+ */
 exports.getRecipeById = async (req, res) => {
     try {
         const recipe = await Recipe.findById(req.params.id);
@@ -33,12 +47,13 @@ exports.getRecipeById = async (req, res) => {
     }
 };
 
-// Create a new recipe
+/**
+ * Creates a new recipe with provided details.
+ */
 exports.createRecipe = async (req, res) => {
     const { recipeName, cuisine, averageRating } = req.body;
 
     try {
-        // Validate input
         if (!recipeName || !cuisine || averageRating === undefined) {
             return res.status(400).json({ message: 'All fields are required' });
         }
@@ -51,7 +66,9 @@ exports.createRecipe = async (req, res) => {
     }
 };
 
-// Update a recipe by ID
+/**
+ * Updates an existing recipe by ID.
+ */
 exports.updateRecipe = async (req, res) => {
     const { recipeName, cuisine, averageRating } = req.body;
 
@@ -70,7 +87,9 @@ exports.updateRecipe = async (req, res) => {
     }
 };
 
-// Delete a recipe by ID
+/**
+ * Deletes a recipe by its ID.
+ */
 exports.deleteRecipe = async (req, res) => {
     try {
         const deletedRecipe = await Recipe.findByIdAndDelete(req.params.id);

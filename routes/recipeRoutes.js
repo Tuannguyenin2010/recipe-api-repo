@@ -1,3 +1,10 @@
+/**
+ * File Name: recipeRoutes.js
+ * Student's Name: Tuan Nguyen
+ * StudentID: 200541876
+ * Date: 11/15/2024
+ * Description: Routes for managing recipes, including public and protected endpoints.
+ */
 const express = require('express');
 const { verifyToken } = require('../middleware/auth');
 const recipeController = require('../controllers/recipeController');

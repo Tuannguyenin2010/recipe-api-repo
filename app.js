@@ -1,5 +1,8 @@
 /**
  * File Name: app.js
+ * Student's Name: Tuan Nguyen
+ * StudentID: 200541876
+ * Date: 11/15/2024
  * Description: Main application file for the Recipe API, setting up routes, middleware, and database connection.
  */
 
