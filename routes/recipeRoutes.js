@@ -4,6 +4,9 @@ const recipeController = require('../controllers/recipeController');
 
 const router = express.Router();
 
+// Public route: Get all recipes
+router.get('/recipes/public', recipeController.getAllRecipesPublic);
+
 // Get all recipes
 router.get('/recipes', verifyToken, recipeController.getAllRecipes);
 
